@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Docker-LNMP">
+  <description>Coding Standards</description>
+
+  <!-- Scan all files in directory -->
+  <file>./web/wp-content/themes/custom/</file>
+
+  <!-- Scan only PHP files -->
+  <arg name="extensions" value="php"/>
+
+  <!-- Ignore WordPress and Composer dependencies -->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+
+  <!-- Show reports -->
+  <arg name="report" value="full"/>
+  <arg name="report" value="summary"/>
+  <arg name="report" value="source"/>
+
+  <!-- Show colors in console -->
+  <arg value="-colors"/>
+
+  <!-- Show sniff codes in all reports -->
+  <arg value="ns"/>
+
+  <!-- Use WordPress as a base -->
+  <rule ref="vendor/wp-coding-standards/wpcs/WordPress">/</rule>
+  <rule ref="vendor/wp-coding-standards/wpcs/WordPress-Core">/</rule>
+  <rule ref="vendor/wp-coding-standards/wpcs/WordPress-Docs">/</rule>
+  <rule ref="vendor/wp-coding-standards/wpcs/WordPress-Extra">/</rule>
+
+  <!-- Indentation -->
+  <rule ref="PEAR.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2"/>
+    </properties>
+  </rule>
+
+  <!-- Consider whitespace errors to be low severity -->
+  <rule ref="Generic.WhiteSpace">
+    <severity>0</severity>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace">
+    <severity>0</severity>
+  </rule>
+
+  <rule ref="WordPress.WhiteSpace">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Consider commenting errors to be low severity -->
+  <rule ref="Generic.Commenting">
+    <severity>0</severity>
+  </rule>
+
+  <rule ref="Squiz.Commenting">
+    <severity>0</severity>
+  </rule>
+
+</ruleset>
