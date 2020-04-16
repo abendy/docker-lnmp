@@ -60,7 +60,7 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 	}
 	$site_url = getenv( 'WP_HOME' ) !== false ? getenv( 'WP_HOME' ) : $scheme . '://' . $_SERVER['HTTP_HOST'] . '/';
 	define( 'WP_HOME', $site_url );
-	define( 'WP_SITEURL', $site_url . 'wp/' );
+	define( 'WP_SITEURL', $site_url . '/wp/' );
 
 	/**
 	 * Set Database Details
@@ -69,12 +69,34 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 	define( 'DB_USER', getenv( 'DB_USER' ) );
 	define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) !== false ? getenv( 'DB_PASSWORD' ) : '' );
 	define( 'DB_HOST', getenv( 'DB_HOST' ) );
+	define( 'DB_CHARSET', getenv( 'DB_CHARSET' ) );
+
+  /**
+   * Set Redis cache details
+   */
+  define( 'CACHE_HOST', getenv( 'REDIS_HOST' ) );
+  define( 'CACHE_PORT', getenv( 'REDIS_PORT' ) );
+  define( 'CACHE_PASSWORD', getenv( 'REDIS_PASSWORD' ) );
 
 	/**
 	 * Set debug modes
 	 */
+	// Enable debug mode
 	define( 'WP_DEBUG', getenv( 'WP_DEBUG' ) === 'true' ? true : false );
-	define( 'IS_LOCAL', getenv( 'IS_LOCAL' ) !== false ? true : false );
+
+	// Enable debug logging
+	define( 'WP_DEBUG_LOG', getenv( 'WP_DEBUG_LOG' ) === 'true' ? '../logs/wp/debug.log' : false );
+
+	// Disable display of errors and warnings
+	define( 'WP_DEBUG_DISPLAY', getenv( 'WP_DEBUG_DISPLAY' ) === 'true' ? true : false );
+	ini_set( 'display_errors', getenv( 'WP_DEBUG_DISPLAY' ) === 'true' ? 1 : 0 );
+
+	define( 'WP_DISABLE_FATAL_ERROR_HANDLER', getenv( 'WP_DISABLE_FATAL_ERROR_HANDLER' ) === 'true' ? true : false );
+	define( 'SAVEQUERIES', getenv( 'SAVEQUERIES' ) === 'true' ? true : false );
+
+	define( 'AUTOMATIC_UPDATER_DISABLED', true );
+	define( 'DISABLE_WP_CRON', true );
+	define( 'SCRIPT_DEBUG', true );
 
 	/**#@+
 	 * Authentication Unique Keys and Salts.
@@ -100,6 +122,36 @@ endif;
  * If on Pantheon
  */
 if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
+
+  // Ensure the site is being served from the primary domain.
+  // and securely with HTTPS!
+  // https://pantheon.io/docs/redirects#redirect-with-php
+  if ( 'cli' !== php_sapi_name() ) {
+
+    if ( 'dev' === $_ENV['PANTHEON_ENVIRONMENT'] ) {
+      $primary_domain = getenv( 'DEV_URL' );
+    }
+
+    if ( 'test' === $_ENV['PANTHEON_ENVIRONMENT'] ) {
+      $primary_domain = getenv( 'TEST_URL' );
+    }
+
+    if ( 'live' === $_ENV['PANTHEON_ENVIRONMENT'] ) {
+      $primary_domain = getenv( 'PROD_URL' );
+    }
+
+    if ( ! empty( $primary_domain ) && $primary_domain !== $_SERVER['HTTP_HOST'] ) {
+      // Name transaction "redirect" in New Relic for improved reporting (optional).
+      if ( extension_loaded( 'newrelic' ) ) {
+        newrelic_name_transaction( 'redirect' );
+      }
+
+      $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+      header( 'HTTP/1.0 301 Moved Permanently' );
+      header( 'Location: https://' . $primary_domain . $request_uri );
+      exit();
+    }
+  }
 
 	// ** MySQL settings - included in the Pantheon Environment ** //
 	/** The name of the database for WordPress */
@@ -154,8 +206,8 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 		}
 		define( 'WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST'] );
 		define( 'WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST'] . '/wp' );
-
 	}
+
 	// Don't show deprecations; useful under PHP 5.5
 	error_reporting( E_ALL ^ E_DEPRECATED );
 	// Force the use of a safe temp directory when in a container
@@ -171,8 +223,8 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 endif;
 
 /*
-* Define wp-content directory outside of WordPress core directory
-*/
+ * Define wp-content directory outside of WordPress core directory
+ */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
 
