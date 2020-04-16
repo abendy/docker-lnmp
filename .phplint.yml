@@ -1,0 +1,6 @@
+path: ./web/wp-content/themes/custom/
+extensions:
+  - php
+exclude:
+  - node_modules
+  - vendor

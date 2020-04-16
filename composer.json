@@ -33,6 +33,7 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "dmore/behat-chrome-extension": "^1.2",
     "genesis/behat-fail-aid": "^2.1",
+    "overtrue/phplint": "^1.2",
     "paulgibbs/behat-wordpress-extension": "^3.3.0",
     "phpcompatibility/php-compatibility": "^9.3",
     "phpunit/phpunit": "^7.5.1",
@@ -99,6 +100,8 @@
     "unit-test": [
       "./vendor/bin/phpunit tests/unit/*"
     ],
-    "lint": "find web/wp-content -name '*.php' -exec php -l {} \\;"
+    "lint": [
+      "./vendor/bin/phplint --no-cache"
+    ]
   }
 }
