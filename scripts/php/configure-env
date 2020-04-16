@@ -9,8 +9,7 @@ cd /var/www/html
 if ! [ -e .env ]; then
   cp -f .env.example .env
 
-  sed -i "/WP_HOME=/c\WP_HOME=http://${WP_HOST}:${WP_PORT}" .env
-  sed -i "/WP_HOST=/d" .env
+  sed -i "/WP_HOST=/c\WP_HOME=http://${WP_HOST}:${WP_PORT}" .env
   sed -i "/WP_PORT=/d" .env
 
   sed -i "/DB_NAME=/c\DB_NAME=${DB_NAME}" .env
@@ -22,21 +21,19 @@ if ! [ -e .env ]; then
   sed -i "/DB_PREFIX=/c\DB_PREFIX=${DB_PREFIX}" .env
 
   # Remove unused variables
+  sed -i '/# Timezone/d' .env
   sed -i "/TZ=/d" .env
+  sed -i '/# NGINX/d' .env
   sed -i "/NGINX_VERSION=/d" .env
   sed -i "/PHP_VERSION=/d" .env
+  sed -i '/# MariaDB/d' .env
   sed -i "/MARIADB_VERSION=/d" .env
   sed -i "/REDIS_VERSION=/d" .env
   sed -i "/REDIS_EXT_VERSION=/d" .env
-  sed -i "/REDIS_HOST=/d" .env
-  sed -i "/REDIS_PORT=/d" .env
-  sed -i "/REDIS_PASSWORD=/d" .env
+  sed -i '/# Memcache/d' .env
   sed -i "/MEMCACHED_VERSION=/d" .env
   sed -i "/MEMCACHED_EXT_VERSION=/d" .env
   sed -i "/XDEBUG_EXT_VERSION=/d" .env
-  sed -i "/XDEBUG_CONFIG=/d" .env
-
-  sed -i '/^#/ d' .env
 
   # Set salts
   sed -i "/SECURE_AUTH_KEY/s/generateme/`pwgen -c -n -s -1 64`/
