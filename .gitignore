@@ -115,6 +115,9 @@ pantheon.upstream.yml
 # Databases #
 ###############
 *.sql
+/database/**
+!/database/*/
+!/database/*/.gitkeep
 
 # OS generated files #
 ######################
