@@ -1,9 +1,4 @@
 <?php
-/*
- * Don't show deprecations
- */
-error_reporting( E_ALL ^ E_DEPRECATED );
-
 /**
  * Set root path
  */
@@ -32,11 +27,6 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $rootPath . '/.env
  */
 define( 'DISALLOW_FILE_EDIT', true );
 define( 'DISALLOW_FILE_MODS', true );
-
-/**
- * Force SSL
- */
-define( 'FORCE_SSL_ADMIN', true );
 
 /**
  * Limit post revisions
@@ -227,6 +217,10 @@ endif;
  */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
+
+// define( 'TEMPLATEPATH', get_template_directory() );
+// define( 'STYLESHEETPATH', get_stylesheet_directory() );
+// define( 'WP_DEFAULT_THEME', 'custom' );
 
 /**
  * WordPress Database Table prefix.

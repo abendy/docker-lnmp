@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eo pipefail
+
+#
+# This script prepares the WP theme build artifacts.
+#
+
+# Build Theme Frontend Assets
+composer -n build-theme

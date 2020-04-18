@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": ">=7.4",
     "composer/installers": "^1.3.0",
     "pantheon-systems/quicksilver-pushback": "^2",
     "pantheon-systems/wordpress-composer": "*",
@@ -51,7 +51,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
-      "php": "7.2"
+      "php": "7.4"
     }
   },
   "prefer-stable": true,
@@ -105,6 +105,10 @@
     ],
     "lint": [
       "./vendor/bin/phplint --no-cache"
+    ],
+    "build-theme": [
+      "@prepare-for-pantheon",
+      "yarn --cwd ./web/wp-content/themes/custom/hypr install && yarn  --cwd ./web/wp-content/themes/custom/hypr run build"
     ]
   }
 }

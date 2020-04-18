@@ -1,0 +1,70 @@
+// Security Encyclopedia Wiki
+
+#page-container {
+  // Security Encyclopedia wiki widget
+  .widget_hypr_security_encyclopedia_widget {
+    background-color: #fff;
+    font-weight: bold;
+
+    .et_pb_button {
+      display: flex;
+      margin: auto;
+      min-width: auto;
+      justify-content: center;
+    }
+
+    > div {
+      margin-bottom: 0.95rem;
+      padding: 0.3rem 0.3rem 0.3rem 0.6rem;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:not(:first-of-type) {
+        border: solid 1px #f01b70;
+      }
+
+      .header {
+        color: #000 !important;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .content {
+        display: none;
+        font-size: 1rem;
+        padding-top: 1rem;
+
+        a:link,
+        a:hover,
+        a:visited {
+          color: #9074b5;
+          font-weight: 600;
+        }
+      }
+
+      &.open {
+        .content {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // Security Encyclopedia related terms widget
+  .widget_hypr_related_terms_widget {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width:980px) {
+  .flex-column-reverse {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+}

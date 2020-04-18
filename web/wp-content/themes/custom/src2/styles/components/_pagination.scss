@@ -1,0 +1,12 @@
+// Pagination
+
+.pagination-loader {
+  color: #1a1387;
+  margin: 1rem auto;
+  width: 25%;
+
+  &::-moz-progress-bar,
+  ::-webkit-progress-value {
+    background-color: #1a1387;
+  }
+}

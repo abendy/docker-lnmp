@@ -1,0 +1,13 @@
+// Main layout
+
+#main {
+  @include from($desktop) {
+    margin-top: 100px;
+  }
+}
+
+.main-col + .main-col {
+  @include from($tablet) {
+    padding-left: 2.25rem;
+  }
+}

@@ -1,0 +1,8 @@
+// Fix for responsive iframes
+// Excludes #et-fb-app-frame (Divi Visual Builder)
+
+iframe:not(#et-fb-app-frame) {
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+}

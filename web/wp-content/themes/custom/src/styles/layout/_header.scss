@@ -1,0 +1,50 @@
+// Header
+
+#header {
+  background-color: $white;
+  margin-bottom: .2rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @include from($tablet) {
+    margin-bottom: 1rem;
+  }
+
+  @include from($desktop) {
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .custom-logo {
+    height: 80px;
+    margin: 0.5rem 0;
+    margin-right: 2rem;
+    width: auto;
+  }
+
+  .navbar-end .navbar-item.tile {
+    justify-content: center;
+  }
+
+  .search {
+    &::placeholder {
+      color: $black;
+    }
+  }
+
+  .newsletter-signup button {
+    background-color: transparent;
+    border: 0 none;
+    color: $white;
+    cursor: pointer;
+    float: right;
+    font-family: $font-family-default;
+    font-size: rem(11);
+    margin-bottom: .5rem;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}

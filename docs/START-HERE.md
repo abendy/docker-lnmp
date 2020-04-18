@@ -33,6 +33,26 @@ cgr pantheon-systems/terminus
 
 This is not the method recomended in Pantheon's [installation documentation](https://pantheon.io/docs/terminus/install). See [cgr documentation](https://github.com/consolidation/cgr) to evaluate this method for your setup.
 
+## Generate GitHub token
+
+[]()
+
+Consider exporting this as an environment variable in your shell runtime configuration.
+
+```sh
+export GITHUB_TOKEN=
+```
+
+## Generate CircleCI token
+
+[]()
+
+Consider exporting this as an environment variable in your shell runtime configuration.
+
+```sh
+export CIRCLE_TOKEN=
+```
+
 ## Generate Pantheon machine token
 
 [Pantheon Machine Tokens](https://dashboard.pantheon.io/users/#account/tokens/list)

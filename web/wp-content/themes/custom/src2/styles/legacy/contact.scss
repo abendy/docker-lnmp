@@ -1,0 +1,123 @@
+@import "colors";
+@import "typeset";
+
+
+#page-container{
+	.legal-consent-container{
+		p{
+			color: white!important;
+			margin: 20px 0;
+		}
+	}
+}
+
+#page-container{
+	.submitted-message{
+		background-color: rgba(0,0,0,.4);
+		@include border-radius(4px);
+		padding: 20px;
+		p{
+			color: white!important;
+		}
+	}
+}
+.hbspt-form{
+	@media only screen and (max-width: 640px){
+		margin: 60px 0!important;
+	}
+
+
+
+
+	form{
+
+
+		.hs-fieldtype-text{
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+			margin: 0 -4px 40px 0;
+
+
+			span{
+				display: none;
+			}
+			.input{
+				padding-right: 20px;
+				input{
+					width: 100%;
+					color: white;
+
+					&::placeholder{
+					color: white;
+					}
+				}
+			}
+		}
+
+		.hs-fieldtype-textarea{
+			display: inline-block;
+			width: 100%;
+			vertical-align: top;
+			margin: 0px 0 0 0;
+
+			span{
+				display: none;
+			}
+
+			textarea{
+				width: 100%;
+				min-height: 240px;
+				background-color: $secondary-2;
+				border: none;
+				color: white;
+				padding: 20px;
+
+				&::placeholder{
+          color: rgba(255,255,255,.7);
+				}
+			}
+		}
+	}
+
+	.hs-input{
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid rgba(255,255,255,1);
+		outline: none;
+		display: block;
+
+
+	}
+
+
+
+	.hs-error-msgs{
+		background-color: black;
+		@include border-radius(4px);
+		border: 1px solid $primary-1;
+		padding: 5px;
+		margin: 10px 10px 10px 0;
+		list-style-type: none;
+
+
+		label{
+			color: $primary-1;
+			@include h5-titilliumsemi($primary-1);
+			font-size: 12px!important;
+		}
+	}
+
+	.hs-button{
+		margin-top: 10px;
+		@include h5-titilliumsemi(white);
+		@include border-radius(2px);
+		background-color: $primary-2!important;
+		padding: 5px 20px;
+		border: 1px solid #92EBF0!important;
+		@include box-shadow(0 0 5px $primary-2);
+
+	}
+
+
+}

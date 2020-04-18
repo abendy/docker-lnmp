@@ -1,16 +1,15 @@
 # Helpful commands
 
-## Connect to app volume
+## Connect to app volume (Docker)
 
 ```sh
 docker exec -it lnmp-php /bin/bash
 ```
 
-## Quit Docker
+## Quit (Docker)
 
 ```sh
-docker-sync stop \
-  && docker-compose down \
+docker-compose down \
   && test -z "$(docker ps -q 2>/dev/null)" && osascript -e 'quit app "Docker"'
 ```
 
@@ -49,7 +48,6 @@ docker exec -it hypr-php /bin/bash -c 'kill -USR2 1'
 ## Wipe app volume and recreate (Docker)
 
 ```sh
-docker-sync clean \
-  && docker volume rm -f app_data redis_data \
+docker volume rm -f app_data redis_data \
   && docker volume create --name=app_data
 ```

@@ -1,0 +1,8 @@
+{
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.renderWhitespace": "selection",
+  "editor.trimAutoWhitespace": false,
+  "files.trimTrailingWhitespace": false,
+  "phpcs.executablePath": "/Users/abendy/Sites/hypr/hypr-wp/vendor/bin/phpcs",
+  "php-cs-fixer.executablePath": "/Users/abendy/Sites/hypr/hypr-wp/vendor/bin/phpcbf",
+}

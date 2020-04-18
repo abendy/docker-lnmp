@@ -1,0 +1,532 @@
+@import "colors";
+@import "typeset";
+@import "spanoverride";
+
+/* saira-extra-condensed-regular - latin */
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/saira-extra-condensed-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Saira ExtraCondensed Regular'), local('SairaExtraCondensed-Regular'),
+       url('../fonts/saira-extra-condensed-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/saira-extra-condensed-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/saira-extra-condensed-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/saira-extra-condensed-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/saira-extra-condensed-v4-latin-regular.svg#SairaExtraCondensed') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Rajdhani Reg';
+    src: url('../fonts/Rajdhani-Regular.eot');
+    src: url('../fonts/Rajdhani-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Rajdhani-Regular.woff2') format('woff2'),
+        url('../fonts/Rajdhani-Regular.woff') format('woff'),
+        url('../fonts/Rajdhani-Regular.ttf') format('truetype'),
+        url('../fonts/Rajdhani-Regular.svg#Rajdhani-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Rajdhani Bold';
+    src: url('../fonts/Rajdhani-Bold.eot');
+    src: url('../fonts/Rajdhani-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Rajdhani-Bold.woff2') format('woff2'),
+        url('../fonts/Rajdhani-Bold.woff') format('woff'),
+        url('../fonts/Rajdhani-Bold.ttf') format('truetype'),
+        url('../fonts/Rajdhani-Bold.svg#Rajdhani-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+//Hide Footer
+#main-footer {
+	display: none;
+}
+
+//Global Section Styles
+
+#page-container, #sidebar-overlay {
+	.entry-content {
+		p a {
+			color: #9074b5;
+			font-weight: bold!important;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		p {
+			margin: 10px 0;
+			strong {
+				font-weight: bold;
+			}
+		}
+	}
+
+	h1 {
+		margin-top: 10px;
+		@include h1-sairabold($secondary-2);
+
+		span {
+			@include h1-span-sairabold($secondary-2);
+		}
+	}
+
+	h1.title {
+		@include h1-title(white, 5px, 5px, 5px);
+
+    span {
+			@include h1-span-title(white);
+		}
+	}
+
+	h2 {
+		@include h2-rajbold($secondary-2);
+
+    span {
+			@include h2-span-rajbold($secondary-2);
+		}
+	}
+
+	h3 {
+		@include h3-rajreg($secondary-2, 1.363em);
+
+    span {
+			@include h3-span-rajreg($secondary-2);
+		}
+	}
+
+	h4 {
+		@include h4-titilliumreg($secondary-2, 1.5em);
+
+    span {
+			@include h4-span-titilliumreg($secondary-2);
+		}
+	}
+
+	h5 {
+		@include h5-titilliumsemi($secondary-2);
+
+    span {
+			@include h5-span-titilliumsemi($secondary-2);
+		}
+	}
+
+	h6 {
+    @include h6-rajsemi($secondary-2);
+
+		span {
+			@include h6-span-rajsemi($secondary-2);
+		}
+	}
+
+	p {
+		@include p-titilliumreg($secondary-2);
+		span {
+			@include p-span-titilliumreg($secondary-2);
+		}
+	}
+
+	h1,h2,h3,h4 {
+		margin-bottom: 20px;
+	}
+
+	.et_pb_bg_layout_light {
+		h1 {
+			margin-top: 10px;
+			@include h1-sairabold($secondary-2);
+
+			span {
+				@include h1-span-sairabold($secondary-2);
+			}
+		}
+
+		h1.title {
+			@include h1-title(white, 10px, 10px, 5px);
+			span {
+				@include h1-span-title(white);
+			}
+		}
+
+		h2 {
+			@include h2-rajbold($secondary-2);
+
+			span {
+				@include h2-span-rajbold($secondary-2);
+			}
+		}
+
+		h3 {
+			@include h3-rajreg($secondary-2, 1.563em);
+
+      span {
+				@include h3-span-rajreg($secondary-2);
+			}
+		}
+
+		h4 {
+			@include h4-titilliumreg($secondary-2, 1.5em);
+
+      span {
+				@include h4-span-titilliumreg($secondary-2);
+			}
+		}
+
+		h5 {
+			@include h5-titilliumsemi($secondary-2);
+
+      span {
+				@include h5-span-titilliumsemi($secondary-2);
+			}
+		}
+
+		h6 {
+			@include h6-rajsemi($secondary-2);
+
+      span {
+				@include h6-span-rajsemi($secondary-2);
+			}
+		}
+
+		p {
+			@include p-titilliumreg($secondary-2);
+			span {
+				@include p-span-titilliumreg($secondary-2);
+			}
+		}
+	}
+
+	.et_pb_bg_layout_dark {
+		h1.title {
+			@include h1-title(white, 10px, 5px, 5px);
+			span {
+				@include h1-span-title(white);
+			}
+		}
+
+		h1 {
+			@include h1-sairabold(white);
+
+			span {
+				@include h1-span-sairabold(white);
+			}
+		}
+
+		h2 {
+			@include h2-rajbold(white);
+
+			span {
+				@include h2-span-rajbold(white);
+			}
+		}
+
+		h3 {
+			@include h3-rajreg(white, 1.563em);
+			span {
+				@include h3-span-rajreg(white);
+			}
+		}
+
+		h4 {
+			@include h4-titilliumreg(white, 1.5em);
+			span {
+				@include h4-span-titilliumreg(white);
+			}
+		}
+
+		h5 {
+			@include h5-titilliumsemi(white);
+			span {
+				@include h5-span-titilliumsemi(white);
+			}
+		}
+
+		h6 {
+			@include h6-rajsemi(white);
+			span {
+				@include h6-span-rajsemi(white);
+			}
+		}
+
+		p {
+			@include p-titilliumreg(white);
+			span {
+				@include p-span-titilliumreg(white);
+			}
+		}
+	}
+}
+
+#page-container .entry-content #custom-footer, #custom-footer {
+	p {
+		color: white!important;
+
+    span {
+			color: white!important;
+		}
+
+		a {
+			font-weight: normal!important;
+			color: white!important;
+		}
+	}
+
+	.hs_error_rollup {
+		display: none;
+	}
+
+	.hbspt-form form .hs-fieldtype-text {
+		display: block;
+
+		@media only screen and (max-width: 980px){
+			width: 75%;
+		}
+
+		@media only screen and (max-width: 480px){
+			width: 100%;
+		}
+	}
+
+	.hs-button {
+		margin-top: -10px!important;
+	}
+}
+
+//Homepage Exceptions
+
+.page-id-119 #page-container {
+	.et_pb_section.et_pb_section_first {
+		h1:first-child {
+			@include h1-title(white, 20px, 10px, 10px);
+
+			span {
+				@include h1-title(white, 20px, 10px, 10px);
+			}
+		}
+	}
+}
+
+.hover-image-desc {
+	display: block;
+	@include transition(.2s all ease-in-out);
+	max-height: 683px;
+
+	&:hover {
+		display: block;
+		@include transition(.2s all ease-in-out);
+
+		.et_pb_text_inner {
+			@include transition(.2s all ease-in-out);
+			@include transform(translateY(-100%));
+		}
+	}
+
+	.et_pb_text_inner {
+		@include transition(.2s all ease-in-out);
+		@include transform(translateY(-14px));
+	}
+}
+
+//Logo Slider
+
+.slick-list {
+	padding: 20px 0!important;
+}
+
+.wpls-logo-showcase .wpls-logo-cnt.slick-slide {
+	margin: 0 10px;
+}
+
+.wpls-fix-box {
+	height: 100%;
+	padding: 20px;
+
+	img {
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+.wpls-logo-showcase {
+	padding: 0!important;
+}
+
+.wpls-logo-showcase .slick-dots {
+	display: none!important;
+}
+
+.wpls-logo-showcase button.slick-arrow {
+	@include box-shadow(0 0 10px rgba(0,0,0,.3)!important);
+	@include border-radius(100px!important);
+	background-image: none!important;
+	background-color: white!important;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+
+	&.slick-prev {
+		@include transform(translateX(-45px));
+		&:after {
+			background-image: url("../images/global/prev-arrow.svg");
+			background-repeat: no-repeat;
+			background-position: 14px 13px;
+		}
+	}
+
+	&.slick-next {
+		@include transform(translateX(45px));
+		&:after {
+			background-image: url("../images/global/next-arrow.svg");
+			background-repeat: no-repeat;
+			background-position: 16px 13px;
+		}
+	}
+
+	&:after {
+		content: "";
+		text-indent: 0px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+
+		@include transform(translate(-50%,-50%));
+		color: black;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+
+	&:hover, &:active, &:focus {
+		background-color: transparent!important;
+		@include transition(.2s all ease-in-out);
+		@include box-shadow(0 0 10px rgba(0,0,0,.6)!important);
+	}
+}
+
+.wpls-logo-cnt {
+	@include box-shadow(0 0 10px rgba(0,0,0,.3));
+	@include border-radius(4px);
+	position: relative;
+
+	.wp-post-image {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		padding: 10px!important;
+		@include transform(translate(-50%,-50%));
+		width: auto!important;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	@media only screen and (min-width: 2000px){
+		height: 250px!important;
+	}
+
+	@media only screen and (min-width: 1600px){
+		height: 150px!important;
+	}
+
+	@media only screen and (max-width: 1600px){
+		height: 130px!important;
+	}
+
+	@media only screen and (max-width: 1400px){
+		height: 60px!important;
+	}
+
+	@media only screen and (max-width: 1280px){
+		height: 150px!important;
+	}
+
+	@media only screen and (max-width: 1040px){
+		height: 200px!important;
+	}
+}
+
+.et_pb_button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+    @include h5-titilliumsemi(white);
+    @include border-radius(4px!important);
+    @include transition(.2s all ease-in-out!important);
+
+    padding: 6px 3em 8px 3em!important;
+    line-height: 27px!important;
+    text-transform: capitalize;
+    min-width: 180px;
+    text-align: center;
+
+   &:after {
+    content: "\45";
+    font-size: 21px;
+    line-height: 25px;
+    margin-left: -8px;
+    margin-top: 0px;
+    transition: all 300ms ease 0ms;
+   }
+
+    &:hover {
+      text-decoration: underline;
+
+      &:after {
+        margin-left: 8px;
+      }
+    }
+
+    &.et_pb_bg_layout_dark {
+        @include h5-titilliumsemi(white);
+        background-color: $primary-2!important;
+        border: 1px solid #92EBF0!important;
+        @include box-shadow(0 0 5px $primary-2);
+        @include border-radius(3px!important);
+    }
+
+    &.et_pb_bg_layout_light {
+        @include h5-titilliumsemi(white);
+        background-color: $secondary-2!important;
+        border: 1px solid $secondary-2!important;
+        @include box-shadow(0 0 0px $secondary-2);
+        @include border-radius(3px!important);
+    }
+
+    // we are wrapping input elements to enable the use of ::after (pseudo-element)
+    // the end effect is to copy the hover effect in place for <a> tags
+    // we can't use ::after on <input> directly: https://stackoverflow.com/a/4660434/605748
+    // also see: frmamework js
+    .hbspt-form & > input.hs-button,
+    & > input {
+      border: 0 none !important;
+      padding: 0 !important;
+    }
+}
+
+span.et_pb_button::after {
+  margin-top: 10px;
+}
+
+.table-wrap {
+	width: 100%;
+	overflow-x: scroll;
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+
+div.pdfemb-inner-div {
+	display: block!important;
+}
+
+.pdfemb-viewer, .pdfemb-pagescontainer
+{
+	height:100% !important;
+	background-color: transparent!important;
+}
+
+div.pdfemb-inner-div {
+	display: block !important;
+	background-color: transparent!important;
+}

@@ -1,0 +1,384 @@
+@import "colors";
+@import "typeset";
+
+body.page-template-press #main-header {
+	background-color: #1a1387;
+}
+
+body.page-template-blog #main-header {
+	background-color: #000000;
+}
+
+body.page-template-blog, body.page-template-press{
+	#custom-footer{
+		background: url('../images/Gridwave_1-1.jpg') no-repeat $secondary-2!important;
+		
+		background-size: cover!important;
+
+		.et_pb_row_0{
+			background-color: transparent;
+			min-height: auto;
+			padding: 100px 0;
+
+			.et_pb_text_1{
+				padding: 0!important;
+			}
+
+			.et_pb_text_0{
+				background: none;
+				min-height: auto!important;
+			}
+		}
+	}
+	background-color: rgba(0,0,0,.05);
+
+	#page-container .masthead{
+		padding: 150px 0 90px 0;
+		background-color: #000000;
+		background: url("../images/Mountains_9.jpg") no-repeat #000000 !important;
+		background-size: cover !important;
+		background-position:  center !important;
+
+		@media only screen and (max-width: 980px) {
+			padding: 90px 0 60px 0;
+		}
+
+		h1{
+			color: white!important;
+			text-indent: 0px;
+			text-align: center!important;
+			margin: 0 auto!important;
+			@media only screen and (max-width:577px){
+				
+			}
+			
+		}
+	}
+
+
+	a.back-btn{
+		top: 90px;
+		    position: absolute;
+		    text-transform: uppercase;
+		    left: 0;
+		    top: 0px;
+		    color: white;
+		    font-weight: bold;
+		    @include h6-rajsemi($secondary-2);
+		    z-index: 10;
+		
+	}
+
+
+	.searchandfilter{
+		margin: 0 auto;
+		text-align: center;
+		
+		ul{
+			margin: 0 auto;
+		}
+		ul li{
+			display: inline-block;
+			
+			&.sf-field-search{
+				@media only screen and (max-width:990px){
+					width: 100%;
+					label{
+						width: 100%;						
+					}
+
+				}
+				input{
+					min-width: 480px;
+					@media only screen and (max-width:990px){
+						max-width: 100%;
+						min-width: auto;
+						width: 100%;
+					}
+					border:none;
+					background-color: transparent;
+					border-bottom: 1px solid $primary-2;
+					@include h4-titilliumreg(white, 1.28em);
+
+
+				}
+
+
+			}
+
+			&.sf-field-tag{
+				margin: 0 10px;
+
+				@media only screen and (max-width:980px){
+					margin: 0 10px 0 0 ;
+				}
+				.sf-input-select {
+					display: block;
+					font-size: 14px;
+					font-family: sans-serif;
+					font-weight: 700;
+					color: #444;
+					line-height: 1.3;
+					padding: 8px 1.4em 8px .8em;
+					width: 100%;
+					max-width: 100%; /* useful when width is set to anything other than 100% */
+					box-sizing: border-box;
+					border: none;
+					margin: 0;
+					@include h5-titilliumsemi($secondary-2);
+					
+					@include border-radius(3px);
+					-moz-appearance: none;
+					-webkit-appearance: none;
+					appearance: none;
+					background-color: #fff;
+					/* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+						for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+						
+					*/
+					background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+					background-repeat: no-repeat, repeat;
+					/* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+					background-position: right .7em top 50%, 0 0;
+					/* icon size, then gradient */
+					background-size: .65em auto, 100%;
+				}
+				/* Hide arrow icon in IE browsers */
+				.sf-input-select::-ms-expand {
+					display: none;
+				}
+				/* Hover style */
+				.sf-input-select:hover {
+					border-color: #888;
+				}
+				/* Focus style */
+				.sf-input-select:focus {
+					border-color: #aaa;
+					/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+					box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+					box-shadow: 0 0 0 3px -moz-mac-focusring;
+					color: #222; 
+					outline: none;
+				}
+
+				/* Set options to normal weight */
+				.sf-input-select option {
+					font-weight:normal;
+				}
+
+				/* Support for rtl text, explicit support for Arabic and Hebrew */
+				*[dir="rtl"] .sf-input-select, :root:lang(ar) .sf-input-select, :root:lang(iw) .sf-input-select {
+					background-position: left .7em top 50%, 0 0;
+					padding: .6em .8em .5em 1.4em;
+				}
+			}
+
+			&.sf-field-submit{
+				input{
+					@include h5-titilliumsemi(white);
+					background-color: $primary-2;
+					@include border-radius(4px!important);
+					
+					border: none;
+					@include transition(.2s all ease-in-out!important);
+					
+					padding: 6px 3em 8px 3em!important;
+					line-height: 27px!important;
+				}
+			}
+
+
+		}
+	}
+
+
+	
+	.searchbox{
+		background-color: $secondary-2;
+		margin-bottom: 20px;
+		.container{
+			padding: 40px 0px;
+		}
+	}
+	#page-container .container.loops{
+		padding: 20px 0;
+
+		h2{
+			margin: 0 20px;
+		}
+		.card-container{
+			display: inline-block;
+			width: 25%;
+			
+			margin-left: 0px;
+
+			.cover{
+				background-size: cover;
+				background-position: center center;
+				height: 180px;
+				    overflow: hidden;
+			}
+
+			.cover-container{
+					
+				    position: relative;
+				    
+				    background-color: white;
+
+
+				    
+				
+			}
+
+			@media only screen and (max-width:980px){
+				width: 50%;
+			}
+
+			@media only screen and (max-width:480px){
+				width: 100%;
+			}
+
+			.card{
+				margin: 20px;
+				height: auto;
+				min-height: 200px;
+				padding-bottom: 60px;
+				position: relative;
+				@include border-radius(0px);
+				border: none;
+				@include box-shadow(0 2px 12px rgba(0,0,0,.2));
+				@include transition(.2s all ease-in-out);
+
+			}
+
+			.card-body{
+				background-color: transparent;
+				overflow: hidden;
+				flex: none;
+				height: 217px;
+
+			}
+
+			h6, h3, p{
+				color: $secondary-2;
+				@include transition(.2s all ease-in-out);
+			}
+
+			h6{
+				text-transform: uppercase;
+			}
+
+			a:hover{
+				text-decoration: none;
+			}
+
+			span.cta{
+				position: absolute;
+				bottom: 20px;
+				text-transform: uppercase;
+				@include h6-rajsemi($secondary-2);
+
+
+			}
+
+			.card:hover{
+				cursor: pointer;
+				background-color: $secondary-2;
+				@include transition(.2s all ease-in-out);
+
+				h3, p{
+					color: white!important;
+					@include transition(.2s all ease-in-out);
+				}
+
+				h6{
+					color: rgba(255,255,255,.5)!important;
+
+					@include transition(.2s all ease-in-out);	
+				}
+
+				span.cta{
+					color: $primary-2!important;
+					@include transition(.2s all ease-in-out);
+				}
+			}
+		}
+
+
+		.row.cards{
+			overflow: hidden;
+			@include transition(.2s all ease-in-out);
+			
+		}
+
+		&.expand{
+			.row.cards{
+				@include transition(.2s all ease-in-out);
+			}
+		}
+
+		.expand-btn{
+			cursor: pointer;
+			margin: 0 20px;
+			@include h6-rajsemi($secondary-2);
+		}
+	}
+
+
+	#page-container{
+		.searchbox, .masthead{
+			@media only screen and (max-width:577px){
+				.container{
+					padding: 20px 40px;
+				}
+			}
+		}
+
+		.container.loops{
+			@media only screen and (max-width:577px){
+				padding: 0 40px;
+			}
+		}
+	}
+
+}
+
+/* press */
+body.page-template-press #page-container .masthead {
+  background-color: #1a1387;
+  background-image: url("../images/Mountains_3.jpg") !important;
+}
+
+
+
+body.single{
+	#main-header{
+		background-color: $secondary-2!important;
+	}
+
+
+
+	#sidebar, #recent-comments, #comment-wrap, .comments-number{
+		display: none;
+	}
+
+	#left-area{
+		width: 100%;
+		float: none;
+		
+	}
+
+	#custom-footer{
+
+	}
+
+	#main-content{
+		min-height: 800px;
+	}
+
+}
+
+
+.et_right_sidebar #main-content .container:before{
+		display: none;
+	}

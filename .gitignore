@@ -131,3 +131,15 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# NPM #
+#########
+node_modules/
+
+# Yarn #
+###########
+yarn-error.log
+
+# vscode #
+##############
+# .vscode/

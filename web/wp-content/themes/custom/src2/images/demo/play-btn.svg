@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="91px" height="95px" viewBox="0 0 91 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M58.4936713,42.0987692 L34.2627155,56.9273657 C33.3205663,57.5039319 32.0894041,57.2075684 31.5128379,56.2654191 C31.3205219,55.9511613 31.21875,55.5898874 31.21875,55.2214536 L31.21875,25.5642607 C31.21875,24.4596912 32.1141805,23.5642607 33.21875,23.5642607 C33.5871838,23.5642607 33.9484577,23.6660325 34.2627155,23.8583486 L58.4936713,38.6869451 C59.4358205,39.2635113 59.7321841,40.4946734 59.1556178,41.4368226 C58.9904424,41.7067309 58.7635795,41.9335937 58.4936713,42.0987692 Z" id="path-1"></path>
+        <filter x="-169.6%" y="-138.6%" width="439.3%" height="377.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="17" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0704540308 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="controls/play-button/red" transform="translate(2.000000, 7.000000)">
+            <g id="controls/play-button">
+                <g id="Triangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F13E9D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

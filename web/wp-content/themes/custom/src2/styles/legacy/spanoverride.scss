@@ -1,0 +1,75 @@
+@import "colors";
+
+//Default Styles
+$saira: "Saira Extra Condensed", "Helvetica", sans-serif!important;
+
+@mixin h1-span-title($setColor){
+	font-size: 1em!important;
+	font-weight: normal!important;
+	margin: 0!important;
+	text-indent: 20px;
+	letter-spacing: 20px;
+	padding-bottom: 0px;
+	line-height: 1!important;
+
+	
+}
+
+
+@mixin h1-span-sairabold($setColor) {
+  font-family: "Saira Extra Condensed", "Helvetica", sans-serif!important;
+  font-weight: bold!important;
+  text-transform: uppercase!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+
+
+  
+}
+
+@mixin h2-span-rajbold($setColor) {
+  font-family: "Rajdhani Bold", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+  font-weight: bold!important;
+  
+}
+
+@mixin h3-span-rajreg($setColor) {
+  font-family: "Rajdhani Reg", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+}
+
+@mixin h4-span-titilliumreg($setColor) {
+  font-family: "Rajdhani Reg", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+}
+
+@mixin h5-span-titilliumsemi($setColor) {
+  font-family: "Rajdhani Reg", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-weight: bold!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+}
+
+@mixin h6-span-rajsemi($setColor) {
+  font-family: "Rajdhani Bold", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+}
+
+@mixin p-span-titilliumreg($setColor) {
+  font-family: "Rajdhani Reg", "Helvetica", sans-serif!important;
+  line-height: 1em!important;
+  font-size: 1em!important;
+  color: $setColor!important;
+  
+}

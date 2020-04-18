@@ -1,0 +1,123 @@
+// Radial Menu
+
+// Mixin to place items on a circle
+//
+// @param {Integer} $item-count - Number of items on the circle
+// @param {Length} $circle-size - Large circle size
+// @param {Length} $item-size - Single item size
+
+@mixin radial-menu($item-count, $circle-size, $item-size) {
+  // Static values
+  list-style: none;
+  padding: 0 !important;
+  position: relative;
+
+  margin: ($circle-size / 1.5) auto;
+  height: $circle-size;
+  width: $circle-size;
+
+  > * {
+    // Static values
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transition: all .3s;
+    z-index: 2;
+
+    margin: -($item-size);
+    height: $item-size;
+    width: ($item-size * 2);
+
+    $angle: (360 / $item-count);
+    $rot: 270;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+          rotate($rot * 1deg)
+          translate($circle-size / 1.25)
+          rotate($rot * -1deg);
+
+        &.hover,
+        &:hover,
+        &:active,
+        &:focus {
+          transform:
+            rotate($rot * 1deg)
+            translate($circle-size / 1.25)
+            rotate($rot * -1deg)
+            scale(1.33);
+        }
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+.radial-menu {
+  @include radial-menu($item-count: 5, $circle-size: 13.3em, $item-size: 2.38em);
+
+  @include mq('550px') { // screens larger than 550px
+    @include radial-menu($item-count: 5, $circle-size: 15em, $item-size: 3.4em);
+  }
+
+  // Center Hypr logo
+  li:last-child {
+    align-items: center;
+    cursor: auto;
+    height: 100%;
+    justify-content: center;
+    left: auto;
+    margin: auto;
+    position: relative;
+    top: auto;
+    width: 100%;
+    z-index: 1;
+
+    img {
+      filter: none !important;
+    }
+  }
+
+  li {
+    cursor: pointer;
+
+    &.hover,
+    &:hover,
+    &:active,
+    &:focus {
+      img {
+        // https://codepen.io/sosuke/pen/Pjoqqp
+        filter: invert(82%) sepia(24%) saturate(4113%) hue-rotate(142deg) brightness(105%) contrast(98%); // #1ff1fc
+      }
+    }
+  }
+
+  img {
+    // https://codepen.io/sosuke/pen/Pjoqqp
+    filter: invert(53%) sepia(65%) saturate(521%) hue-rotate(165deg) brightness(103%) contrast(104%); // #3cb3ff
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  span {
+    color: #fff;
+    font-family: "Saira Extra Condensed", "Helvetica", sans-serif;
+    font-size: .9rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include mq('550px') { // screens larger than 550px
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,635 @@
+@import "colors";
+@import "typeset";
+
+
+
+
+
+
+.page-id-127 #page-container{
+
+	overflow-x: hidden;
+	position: relative;
+	#main-header, #top-header{
+		display: none;
+	}
+
+	.et_pb_section{
+		width: 100%;
+	}
+
+	
+	.hbspt-form{
+		@media only screen and (max-width: 640px){
+			margin: 60px 0!important;
+		}
+		form{
+			
+			
+			.field{
+				display: inline-block;
+				width: 50%;
+				vertical-align: top;
+				margin: 0 0 40px 0;
+
+				
+					span{
+						display: none;
+					}
+				.input{
+					padding-right: 20px;
+					input{
+						color: white;
+						width: 100%;
+						&::placeholder{
+							color: white;
+						}
+					}
+				}
+			}
+		}
+
+		.hs-input{
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid rgba(255,255,255,1);
+			outline: none;
+			display: block;
+
+
+		}
+
+
+
+		.hs-error-msgs{
+			background-color: black;
+			@include border-radius(4px);
+			border: 1px solid $primary-1;
+			padding: 5px;
+			margin: 10px 10px 10px 0;
+
+
+			label{
+				color: $primary-1;
+				@include h5-titilliumsemi($primary-1);
+				font-size: 12px!important;
+			}
+		}
+
+		.hs-button{
+			margin-top: 10px;
+			@include h5-titilliumsemi(white);
+			@include border-radius(2px);
+			background-color: $primary-2!important;
+			padding: 5px 20px;
+			border: 1px solid #92EBF0!important;
+			text-transform: capitalize!important;
+			@include box-shadow(0 0 5px $primary-2);
+		}
+
+		
+	}	
+	
+	
+
+
+	.badges{
+
+		position: absolute;
+		bottom: -80px;
+		left: 50%;
+		width: 100%;
+		display: block;
+		height: auto;
+		@include transform(translate(-50%,0%));
+
+		@media only screen and (max-width: 960px){
+			position: relative;
+			bottom: auto;
+			left: auto;
+			margin-top: 40px;
+			@include transform(translate(0,0));
+		}
+
+		.wrap{
+			text-align: center;
+		}
+		a{
+			height: 40px;
+		    width: 150px;
+		    display: inline-block;
+		    background-size: auto 100%;
+		    background-repeat: no-repeat;
+		    margin: 0 20px 10px 20px;
+		    background-position: center center;
+		    background-color: black;
+		    border: 1px solid rgba(255,255,255,1);
+		    @include border-radius(2px);
+		}
+	}
+	
+
+	.switch{
+
+			@media only screen and (min-width:960px){
+			width: 1140px;
+			left: 50%;
+			top: 48%;
+			position: absolute;
+			@include transform(translate(-50%,-50%));	
+			}
+			
+		
+		
+	}
+
+
+	&:before{
+		height: 2px;
+		@include box-shadow(0 0 20px $primary-1);
+		width: 200px;
+		content: "";
+		display: block;
+		@include border-radius(4px);
+		position: absolute;
+		left:-60px;
+		top: 80px;
+		z-index: 20;
+		background-color: $primary-1;
+
+		@media only screen and (max-width: 960px){
+			top: 80px;
+		}
+	}
+
+	&:after{
+		height: 2px;
+		@include box-shadow(0 0 20px $primary-2);
+		width: 200px;
+		content: "";
+		display: block;
+		@include border-radius(4px);
+		position: absolute;
+		right: -60px;
+		top: 140px;
+		z-index: 0;
+		background-color: $primary-2;
+
+		@media only screen and (max-width: 960px){
+			top: 120px;
+		}
+	}
+
+
+	.demo-logo{
+		background-image: url(../images/global/logo.svg) ;
+	  background-repeat: no-repeat;
+		background-size: 100% auto;
+		height: 70px;
+		width: 83px;
+		text-indent: -10000px;
+		overflow: hidden;
+		display: block;
+
+	}
+
+	.logo-container{
+		padding: 20px 40px 40px 40px!important;
+	}
+
+
+	.masthead{
+		 margin: 0px auto 0px auto;
+		 background: url('../images/tunnel_1.jpg')no-repeat transparent scroll!important;
+		 background-position: center center!important;
+		 background-size: cover!important;
+		 min-height: 100vh;
+		 position: relative;
+
+		 @media only screen and (max-width: 960px){
+		 	background-image: none!important;
+		 	background-color: $secondary-2!important;
+		 	min-height: auto;
+		 	height: auto;
+		 	padding-bottom: 60px;
+
+		 }
+
+		 .row{
+		 	max-width:1140px;
+		 	margin: 0 auto;
+		 	padding: 0 40px;
+			width: 100%;
+
+		 	@media only screen and (min-width:1920px){
+		 		max-width: 1400px;
+		 		width: 100%;
+		 	}
+		 }
+
+		 &:after{
+		 	content: "";
+		 	display: block;
+		 	background: url('../images/demo/mouse-icn.svg')no-repeat transparent scroll;
+		 	background-size: 100% auto;
+		 	position: absolute;
+		 	bottom: 50px;
+		 	left: 50%;
+		 	@include transform(translateX(-50%));
+		 	height: 30px;
+		 	width: 20px;
+
+		 	@media only screen and (max-width:960px){
+		 		display: none;
+		 	}
+		 }
+	}
+
+	.container.videos{
+		max-width: 100%;
+		width: 100%;
+
+		.et_pb_section_video{
+			cursor: pointer;
+		}
+
+		.et_pb_section_video_bg:after{
+				background-color: white;
+			    @include border-radius(100px);
+			    height: 40px;
+			    width: 40px;
+			    
+			    content: "";
+			    color: black;
+			    display: block;
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    z-index: 20;
+			    overflow: hidden;
+			    
+			    
+			    margin: 0!important;
+			    border: 4px solid $primary-1;
+			    @include box-shadow(0 0 20px $primary-1);
+			    @include transform(translateX(-30px)translateY(-30px));
+				
+				    
+		}
+
+
+		.et_pb_section_video_bg:before{
+	    	margin-left: 0px;
+	    	position: absolute;
+	    	left: 50%;
+	    	top: 50%;
+	    	margin-left: -5px;
+	    	margin-top: -6px;
+	    	display: block;
+	    	color: $primary-1;
+	    	background: url('../images/demo/play-btn.svg') no-repeat transparent scroll;
+	    	background-size: 100% auto;
+	    	width: 40px;
+	    	height: 40px;
+	    	@include transform(translateY(-50%)translateX(-50%));
+	    	content: "";
+	    	z-index: 30;
+	    }
+
+		.text-module{
+			background-color: #031458;
+			color: white;
+			text-align: center;
+			padding-top: 60px;
+
+			h5,h1{
+				color: white!important;
+			}
+
+			p{
+				color: rgba(255,255,255,.5)!important;
+			}
+
+			.wrap{
+				padding: 0 60px;
+			}
+		}
+	}
+
+	.subnav{
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		@include transform(translateX(-50%));
+		z-index: 20;
+		width: 100%;
+
+
+		@media only screen and (max-width: 960px){
+			
+			bottom: auto;
+			top: 0px;
+			.wrap{
+				
+			}
+		}
+		.wrap{
+			
+		}
+		.row{
+			padding: 0;
+			background-color: black;
+
+			border: 2px solid $primary-1;
+			@include box-shadow(0 0 10px $primary-1);
+			
+		}
+		.col{
+			width: 33.333%;
+			display: inline-block;
+			height: 40px;
+			margin: 0 -4px 0 0;
+			position: relative;
+			@media only screen and (max-width: 960px){
+				width: 50%;
+
+				&.experience{
+					display: none;
+				}
+
+				&.one{
+					background-color: $primary-1;
+				}
+			}
+			button,a{
+				width: 100%;
+				background-color: transparent;
+				cursor: pointer;
+				height: 100%;
+				display: block;
+				border: none;
+				padding: 0;
+				text-align: center;
+				margin: 0;
+				text-transform: uppercase;
+				@include h5-titilliumsemi(white);
+				line-height: 40px!important;
+			}
+
+			&:after{
+				content: "";
+				display: block;
+				width: 2px;
+				height: 100%;
+				background-color: $primary-1;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+		 	&.last{
+				&:after{
+					display: none;
+				}
+			}
+
+			&.active{
+				button, a{
+					background-color: $primary-1;
+
+					@media only screen and (max-width: 960px){
+						background-color: transparent;
+					}
+
+				}
+			}
+		}
+
+
+		background-color: transparent!important;
+	}
+
+	#switch-content{
+		max-width: 1140px;
+		height: 480px;
+
+
+		
+		overflow: hidden;
+		
+		position: relative;
+		@include border-radius(4px);
+		
+		z-index: 20;
+
+		@media only screen and (max-width: 960px){
+			height: auto;
+			padding-top: 80px;
+		}
+
+		@media only screen and (min-width:1600px){
+			height: 600px;
+			max-width: 100%;
+		}
+
+		@media only screen and (max-height:900px)and(min-width: 960px){
+			height: 480px;
+			max-width: 960px;
+			margin: 0 auto;
+		}
+
+		@media only screen and (max-height:650px)and(min-width: 960px){
+			height: 400px;
+			max-width: 720px;
+			margin: 0 auto;
+		}
+
+
+	}	
+
+	.switch-container{
+		width: 100%;
+		height: 430px;
+		display: block;
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 10;
+		opacity: 0;
+		
+		@include transition(.2s all ease-in-out);
+		@include transform(scale(1.2,1.2));
+		color: white!important;
+
+		@media only screen and (min-width:1600px){
+			height: 600px;
+		}
+
+		@media only screen and (max-width: 960px){
+			display: none;	
+			height: auto;
+			position: relative;
+			left: auto;
+			top: auto;
+			
+		}
+		h4,h1{
+			padding: 0 0px;
+			text-indent: 0px;
+			color: white!important;
+		}
+
+
+		h1{
+			@media only screen and (min-width:1920px){
+				font-size: 120px!important;
+			}
+		}
+
+		h1.title{
+			padding-top: 60px;
+			color: white!important;
+		}
+
+		.et_pb_row{
+			width: 100%;
+			padding: 0 0px;
+		}
+
+		&.active{
+			visibility: visible;
+			
+			@media only screen and (max-width: 960px){
+				display: block;	
+			}
+			
+
+
+			&.enter{
+				opacity: 1;
+				@include transform(scale(1,1));
+				@include transition(.5s all ease-in-out);
+				@include transition-delay(.3s);
+			}
+		}
+
+
+
+		
+	}
+
+	@media only screen and (min-width: 981px) {
+		#one {
+			background-color: rgba(0,0,0,.75);
+			padding:15px;		
+		}
+	}
+	
+	#one{
+		@media only screen and (max-width: 960px){
+			visibility: visible;
+			display: block;
+			opacity: 1;
+			@include transform(scale(1,1));
+			@include transition(.5s all ease-in-out);
+			@include transition-delay(.3s);
+
+		}
+
+
+		@media only screen and (max-height:800px)and(min-width: 960px){
+			
+			.col-2{
+			overflow: scroll;
+			padding-bottom: 200px;
+			height: 100%;
+	
+			}
+		}
+
+		.col-1,.col-2{
+			display: inline-block;
+			width: 50%;
+			margin-right: -4px;
+			vertical-align: top;
+
+			@media only screen and (max-width: 960px){
+				width: 100%;
+			}
+
+		}
+
+		p{
+			@include p-titilliumreg(white);
+			
+
+		} 
+
+		small{
+			@include p-titilliumreg(white);
+			font-size: 10px!important;
+			line-height: 14px!important;
+		}
+
+		.wrap{
+			padding: 0 40px 0 0;
+
+			@media only screen and (max-width:960px){
+				padding: 0;
+			}
+		}
+
+	}
+
+	#experience{
+		background-color: transparent; 
+		height: 100%;
+		@media only screen and (max-width:960px){
+			display: none;
+		}
+
+		li{
+			height: 100%;
+			width: auto;
+		}
+		&:before{
+			content: "";
+			display: block;
+			background: url('../images/demo/try-now.png') no-repeat transparent scroll;
+			background-position: center center;
+			background-size: 68% auto;
+			pointer-events: none;
+			padding: 20px;
+			@include border-radius(4px);
+			background-color: $secondary-2;
+			width: 70px;
+			height: 86px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include transform(translate(-50%,-50%));
+
+		}
+
+		a{
+			width: 100%;
+			height: 100%;
+			display: block;
+			background: url('../images/demo/highlands-demo-screenshot.png');
+			background-position: top center;
+			background-size: cover;
+		}
+
+
+	}
+
+	#tour{
+		background-color: white; 
+	}
+}
+
+
+
+
+
